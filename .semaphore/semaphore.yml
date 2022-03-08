@@ -11,3 +11,19 @@ blocks:
         - name: 'Job #1'
           commands:
             - checkout
+    dependencies: []
+  - name: Build service1
+    dependencies:
+      - 'Block #1'
+    task:
+      jobs:
+        - name: Build service1
+          commands:
+            - echo "Building Service1"
+  - name: Build Service2
+    dependencies: []
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - echo "Building Service2"
