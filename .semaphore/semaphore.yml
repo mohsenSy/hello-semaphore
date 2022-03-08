@@ -20,6 +20,8 @@ blocks:
         - name: Build service1
           commands:
             - echo "Building Service1"
+    run:
+      when: 'change_in(''/service1/'', {default_branch'': ''main''})'
   - name: Build Service2
     dependencies: []
     task:
@@ -27,3 +29,5 @@ blocks:
         - name: 'Job #1'
           commands:
             - echo "Building Service2"
+    run:
+      when: 'change_in(''/service2/'', {default_branch'': ''main''})'
