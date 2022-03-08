@@ -20,6 +20,7 @@ blocks:
         - name: Build service1
           commands:
             - echo "Building Service1"
+            - exit 1
     run:
        when: "change_in('/service1/', {default_branch: 'main'})"
   - name: Build Service2
